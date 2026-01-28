@@ -41,7 +41,7 @@ void paintQuadTwo()
 
 void paintQuadThree()
 {
-     for( i=mid ; i<size-1; i++ )
+     for( i=size-1 ; i>mid; i-- )
      {     
           for( j=0 ; j<mid; j++ )
           {
@@ -52,9 +52,9 @@ void paintQuadThree()
 
 void paintQuadFour()
 {
-     for( i=mid ; i<size-1; i++ )
+     for( i=size-1 ; i>mid; i-- )
      {     
-          for( j=mid ; j<size-1; j++ )
+          for( j=size-1 ; j>mid; j-- )
           {
                canvas[i][j] = 1;
           }      
@@ -115,6 +115,24 @@ int main()
     while( given>4 || given<1 );
     
     paintMat();
+    printMat(); printf("\n");
+    
+    initMat();
+    paintXAxis(); paintYAxis();
+    
+    do{
+        if( given>4 || given<1 )
+        {
+            printf("\n");
+            printf("invalid input! please try again !"); printf("\n");
+        }
+        printf("Enter a number 1-4 : ");
+        scanf( "%d", &given ); printf("\n");
+    }
+    while( given>4 || given<1 );
+    
+    paintMat();
     printMat(); 
+    
     
 }
